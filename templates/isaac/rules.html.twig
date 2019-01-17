@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Four Souls FR{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1 class="col-12" style="text-align: center">COMMENT JOUER ?</h1>
+        <h3 class="col-12">Les Bases</h3>
+        <p class="col-12">2-4 joueurs se relaient en jouant des cartes Butin et en utilisant des Objets pour tuer des Monstres dans le but de gagner plus d'Objets, de cartes Butin et parfois des âmes. Le premier joueur à gagner 4 âmes est le gagnant. La coopération, le troc et la trahison sont fortement encouragés.</p>
+        <br><br>
+        <h3 class="col-12">Commencer le Jeu</h3>
+        <p class="col-12">Les deck Monstre, Butin et Trésor sont mélangés et placés séparément sur la table.</p>
+        <p class="col-12">2 cartes Monstre sont révélées et placées face recto à côté du deck Monstre. Ce sont les Monstres actifs actuels. Si une carte non Monstre est révélée de cette façon, placez les en dessous du deck et continuez le processus jusqu'à ce que 2 cartes Monstre soient révélées.</p>
+        <p class="col-12">2 Objets Trésor sont révélés et placés face recto à côté du deck Trésor. Ce sont les Objets du Magasin actuels.</p>
+        <p class="col-12">Mélangez le deck Personnage et distribuez un Personnage à tous les joueurs face verso. Puis chaque joueur révèle leur Personnage et gagne leur Objet de départ.</p>
+        <p class="col-12">Tous les joueurs commencent avec leur carte Personnage activée (tournée de côté).</p>
+        <p class="col-12">Chaque joueur commence le jeu avec 3 cartes Butin et 3₵.</p>
+        <p class="col-12">Cain commence toujours. Si Cain n'est pas un des Personnages pioché, alors la personne la plus triste commence, ou lancez juste un dé, peu importe tant que ça fonctionne...</p>
+        <br><br>
+        <h3 class="col-12">Tour du joueur</h3>
+        <p class="col-12">1. Rechargez tous vos Objets actifs et votre carte Personnage - Tournez toutes les cartes Objet et Personnage droites.</p>
+        <p class="col-12">2. Piochez un Butin - Piochez la carte au dessus du deck Butin et mettez la dans votre main.</p>
+        <p class="col-12">3. Phase d'Action :</p>
+        <ul>
+           Pendant la Phase d'Action, le joueur actif peut faire l'une ou toutes les choses suivantes dans n'importe quel ordre :
+            <li>Jouer 1 carte Butin - Cela peut être en réponse à n'importe quelle action</li>
+            <br>
+            <li>Acheter un Objet du Magasin ou la carte au dessus du deck Trésor - Tous les Objets du Magasin coûtent 10₵, incluant la carte au dessus du deck.</li>
+            <br>
+            <li>Attaquer un Monstre - Le joueur peut choisir d'attaquer n'importe quel Monstre actif ou attaquer la carte au dessus du deck Monstre.</li>
+            <br>
+            <li>Activer leur carte Personnage pour jouer un carte Butin supplémentaire - La carte Personnage peut être aussi conservée et activée lors du tour d'un autre joueur en réponse à n'importe quelle action.</li>
+            <br>
+        </ul>
+        <p class="col-12">Phase de Fin</p>
+        <ul class="col-12">
+            <li style="list-style-type: none">Soignez tous les joueurs et Monstres.</li>
+            <br>
+            <li style="list-style-type: none">Si vous avez plus de 10 cartes Butin dans votre main, jetez en jusqu'à en avoir 10.</li>
+            <br>
+            <li style="list-style-type: none">Passez le tour au joueur à votre gauche.</li>
+            <br>
+        </ul>
+        <div class="col-6">
+            <img src="../assets/cards/loot_back.png" alt="" class="img-fluid">
+        </div>
+        <h3 class="col-12">Cartes Butin</h3>
+        <p class="col-12">Les cartes Butin sont les seules cartes que vous piochez et gardez dans votre main. Les jouer peuvent instantanément changer le déroulement du jeu de beaucoup de façons différentes.</p>
+        <h5 class="col-12">Types de cartes Butin :</h5>
+        <p class="col-12">Butin Basique - Les cartes Butin Basique se présentent sous la forme de pièces, bombes, coeurs, pilules, etc., et sont utilisées pour gagner des ressources ou aider en combat.</p>
+        <p class="col-12">Cartes de Tarot - Les cartes de Tarot sont des cartes Butin plus avancées qui peuvent drastiquement changer le cours de la partie de beaucoup de façons sympas.</p>
+        <p class="col-12">Colifichets - Ce sont des cartes Butin rares. Lorsqu'elles sont jouées, elles agissent comme des Objets Trésor qui ont des effets passifs. Placez ces cartes face recto sur la table à côté de vos cartes Objet. Elles comptent comme des Objets lorsqu'elles sont en jeu.</p>
+        <div class="col-6">
+            <img src="../assets/cards/monster_back.png" alt="" class="img-fluid">
+        </div>
+        <h3 class="col-12">Cartes Monstre</h3>
+        <p class="col-12">Le deck Monstre est la viande et patates du jeu. Il est rempli de Monstres basiques, Boss, Trésors, Malédictions et autres surprises.</p>
+        <p class="col-12">Monstres Basiques - Monstres qui sont plus faciles à tuer et donnent un Butin, des pièces et dans de rares occasions, des Trésors.</p>
+        <p class="col-12">Boss - Monstres difficiles à tuer avec de plus grosses récompenses qui donnent toujours une âme lorsqu'ils sont tués. Lorsqu'un Boss est tué, le joueur gagne cette carte Boss, c'est comme ça que l'on garde une trace des âmes.</p>
+        <p class="col-12">Cartes Bonus - Cartes peu communes qui donnent des récompenses... mais peuvent aussi vous tuer...</p>
+        <p class="col-12">Malédictions - Cartes rares qui maudissent le joueur choisi par le révéleur de ces cartes. Les cartes Malédiction sont placées à gauche de votre carte Personnage et ne sont pas jetées lorsque le joueur maudit meurt.</p>
+        <div class="col-6">
+            <img src="../assets/cards/treasure_back.png" alt="" class="img-fluid">
+        </div>
+        <h3 class="col-12">Cartes Trésor</h3>
+        <p class="col-12">Les cartes Trésor sont des Objets que les joueurs gagnent. Les cartes Trésor sont posées directement en jeu devant le joueur, sont visibles par tout le monde et tendent à avoir des effets puissants qui modifient le gameplay et interagissent avec les autres joueurs et les Monstres.</p>
+        <p class="col-12">Objets Actifs - Ces Objets peuvent être activées en réponse à n'importe quelle action. Ils sont marqués d'un bord doré et le symbole d'une flèche qui tourne (<img src="../assets/icons/active.png" alt="" class="img-fluid" style="width: 30px">). Une fois qu'un Objet a été activé, il ne peut plus être activé à nouveau jusqu'à ce qu'il soit rechargé au début du tour du joueur qui le contrôle. Vous montrez qu'un Objet a été activé en le tournant de côté.</p>
+        <p class="col-12">Objets Passifs - Ces Objets donnent des capacités spéciales aux joueurs qui changent généralement les règles du jeu ou modifient des effets existants. Ces capacités ne requièrent pas d'activation. Les Objets Passifs ont les bords argentés.</p>
+        <p class="col-12">Objets Payants - Ces Objets sont utilisés lorsque vous payez un coût spécifique. Ils sont marqués d'un symbole $ (<img src="../assets/icons/pay.png" alt="" class="img-fluid">). Comme les Objets Actifs, les Objets Payants peuvent être utilisés en réponse à n'importe quelle action, mais les Objets Payants peuvent être utilisés autant de fois que le coût a été payé et ne sont pas tournés de côté.</p>
+        <h3 class="col-12">Combat</h3>
+        <div class="col-6">
+            <img src="../assets/cards/monster_card.png" alt="" class="img-fluid">
+        </div>
+        <p class="col-12">Les joueurs peuvent attaque une fois pendant leur tour.</p>
+        <p class="col-12">Si un joueur décide d'attaquer, il peut cibler une carte Monstre active ou la carte au dessus du deck Monstre. Si il choisit d'attaquer la carte au dessus du deck Monstre, il révèle cette carte Monstre à tous les joueurs et la place face recto sur un des Monstres actifs.</p>
+        <p class="col-12">Lorsqu'un joueur attaque une carte Monstre, il lance un D6. Si le résultat du jet est plus grand ou égal au nombre requis pour toucher ce Mosntre et que le jet est résolu (personne n'utilise de capacités pour modifier ou relancer le résultat), le joueur inflige des dégâts égaux à ses points d'attaque à ce Monstre. Si le joueur fait un jet inférieur au nombre requis pour toucher ce Monstre, il rate et subit des dégâts égaux aux points d'attaque de ce Monstre. Le joueur attaquant continue d'attaquer jusqu'à ce que le Monstre ou le joueur soit mort.</p>
+        <p class="col-12">Utilisez le D8 pour garder une trace des dégâts infligés à un Monstre pendant ce tour.</p>
+        <p class="col-12">Lorsqu'un Monstre est tué, le joueur actif gagne les récompenses pour sa mort et cette carte Monstre est placée face recto au dessus de la défausse du deck Monstre. Si le Monstre actif est tué et qu'un emplacement de Monstre actif est vide, révélez la carte au dessus du deck Monstre et placez la face recto sur cet emplacement vide.</p>
+        <p class="col-12">Si un Monstre inflige un dégât mortelà un joueur, ce joueur est tué (voir : Mort). Ce joueur paye une pénalité et met fin à son tour.</p>
+        <p class="col-12">Tout dégât infligé aux joueurs et aux cartes Monstre sont soignés à la fin du tour de chaque joueur.</p>
+        <p class="col-12">Note - Si une carte non Monstre est révélée lorsqu'un joueur attaque la carte au dessus du deck Monstre ou est révélée lorsqu'une carte est ajouté sur un emplacement de Monstre actif vide, le joueur actif lit la carte à tous les joueurs et suit les instructions sur la carte. Si une carte non Monstre a été révélée lorsque la carte au dessus du deck Monstre est attaqué, cela compte comme l'attaque de votre tour.</p>
+        <br><br>
+        <h3 class="col-12">Mort</h3>
+        <p class="col-12">Lorsqu'un joueur subit des dégâts mortels ou est tué pour n'importe quelle raison, ce joueur subit la "Pénalité de la Mort !". Ça signifie qu'il doit jeter un Objet non Éternel qu'il contrôle, jeter une carte Butin et perdre 1₵.</p>
+        <p class="col-12">En plus de la pénalité, ce joueur désactive tous ses Objets et sa carte Personnage, marquant la fin de son tour.</p>
+        <br><br>
+        <h3 class="col-12">Interaction en plusieurs Objet ou Butin</h3>
+        <p class="col-12">Lorsqu'un joueur fait une action (activer un Objet, interagir avec un deck, attaquer un Monstre, jouer une carte Butin, lancer un dé, etc.) n'importe quel autre joueur peut répondre à cette action en activant un de leurs Objets, ou utiliser leur carte Personnage pour jouer une carte Butin en réponse.</p>
+        <p class="col-12">Lorsque plusieurs effets comme ça sont déclanchés en même temps, vous attendez de voir si tout le monde a finit de répondre à l'action. Puis chaque effet se joue dans l'ordre inverse, donc le dernier effet se résout en premier et le 2ème au dernier sont joués ensuite  jusqu'à ce que chaque effet soit résolu mettant fin avec l'action l'action initale du joueur.</p>
+        <p class="col-12">Exemple 1 : Joueur 1 décide d'attaquer un Monstre actif qui nécessite un jet de dé de 4 ou plus pour infliger des dégâts. Joueur 1 lance son dé pour voir si un coup touche et il fait un 3. En réponse à ce jet de dé, Joueur 2 propose d'augmenter le résultat de 1 avec son Book of Belial en échange de 2₵. Joueur 1 accepte, le paye et Joueur 2 active le Book of Belial pour augmenter le jet à 4. Sortant de nulle part, Joueur 3 décide d'activer son D6 en réponse, forçant le Joueur 1 à relancer le dé ! Personne n'a de réponse à ça, donc chaque effet se joue maintenant à l'envers. Joueur 3 relance le dé, et fait un 1, Joueur 2 ajoute +1 à ce dé en faisant un 2, puis le dé est résolu, faisant rater le Joueur 1, voyant qu'il avait besoin d'un 4+ pour que cette attaque touche.</p>
+        <p class="col-12">Exemple 2 : Joueur 1 active sa carte Tarot pour piocher 1 Butin. En réponse, Joueur 2 utilise son Sleight of Hand pour regarder les 3 cartes au dessus du deck Butin et les remet dans l'ordre qu'il veut. Aucun autre effet est joué. Joueur 2 regarde les 3 cartes, les réaranges pour qu'une simple carte Penny soit placée au dessus. Puis l'effet de la carte 1 Butin de Joueur 1 se joue, le faisant piocher un simple Penny... :(</p>
+        <p class="col-12">C'est lorsque les effets s'empilent que la stratégie avancée brille vraiment, donc soyez certain de lire vos cartes Butin et les effets de vos Objets soigneusement. La plupart sont conçus spécialement pour être utilisés de beaucoup de façons différentes.</p>
+        <div class="col-6">
+            <img src="../assets/cards/soul_back.png" alt="" class="img-fluid">
+        </div>
+        <h3 class="col-12">Les Âmes Bonus</h3>
+        <p class="col-12">Une fois que les joueurs ont une meilleure compréhension des mécaniques de jeu, vous êtes encouragé à ajouter les Âmes Bonus (le Soul of Guppy, le Soul of Greed et le Soul of Gluttony) à vos parties. Ces cartes bonus ne sont ajoutées à aucun deck mais sont à la place face recto sur la table à côté des decks de jeu à la vue de tous les joueurs.</p>
+        <p class="col-12">Le premier joueur à gagner 25₵ ou plus gagne instantanément le Soul of Greed.</p>
+        <p class="col-12">Le premier joueur à avoir 10 cartes Butin ou plus dans sa main gagne instantanément le Soul of Gluttony.</p>
+        <p class="col-12">Le premier joueur à avoir 2 Objets de Guppy ou plus en leur possession, gagne instantanément le Soul of Guppy.</p>
+        <p class="col-12">Chaque âme peut être gagnée seulement une fois par partie.</p>
+    </div>
+{% endblock %}

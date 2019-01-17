@@ -1,0 +1,9 @@
+body {
+    background-color: lightgray;
+}
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+ul.navbar-nav li.dropdown:hover ul.dropdown-menu {
+    display: block;
+}

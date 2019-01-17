@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+            <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+yWASP3zYNxxvwoQBD5fUSc1tctKq4KUiZzxgkBSJACiUp+IbweVKvsEhMI+gz7" crossorigin="anonymous">
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{{ path('index') }}">The Binding of Isaac : Four Souls [FR]</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown {% if app.request.get('_route') == 'index' or app.request.get('_route') == 'cards' or app.request.get('_route') == 'treasureCards' or app.request.get('_route') == 'lootCards' or app.request.get('_route') == 'monsterCards' or app.request.get('_route') == 'characterCards' or app.request.get('_route') == 'starterCards' or app.request.get('_route') == 'extensionCards' %}active{% endif %}">
+                <a class="nav-link dropdown-toggle dropdwon-toggle-split" href="{{ path('cards') }}">Cartes</a>
+                <ul class="dropdown-menu">
+                    <a href="{{ path('treasureCards') }}" class="dropdown-item">Cartes Trésor</a>
+                    <a href="{{ path('lootCards') }}" class="dropdown-item">Cartes Butin</a>
+                    <a href="{{ path('monsterCards') }}" class="dropdown-item">Cartes Monstre</a>
+                    <a href="{{ path('characterCards') }}" class="dropdown-item">Cartes Personnage</a>
+                    <a href="{{ path('starterCards') }}" class="dropdown-item">Objets de départ</a>
+                    <a href="{{ path('extensionCards') }}" class="dropdown-item">Extension</a>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'rules' ? 'active' }}" href="{{ path('rules') }}">Règles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ app.request.get('_route') == 'addCard' ? 'active' }}" href="{{ path('addCard') }}">Ajouter une carte</a>
+              </li>
+            </ul>
+              {{ form_start(searchBarForm, { 'attr': { 'class' : 'form-inline my-2 my-lg-0' }, 'action': path('search', {'cardName': cardName}), 'method': 'POST' }) }}
+              {{ form_end(searchBarForm) }}
+          </div>
+        </nav>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="{{ asset('build/app.js') }}"></script>
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

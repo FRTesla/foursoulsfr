@@ -1,0 +1,3 @@
+{{ form_start(searchBarForm, { 'attr': { 'class' : 'form-inline my-2 my-lg-0' }, 'action': path('search', {'cardName': cardName}), 'method': 'POST' }) }}
+{{ dump(cardName) }}
+{{ form_end(searchBarForm) }}

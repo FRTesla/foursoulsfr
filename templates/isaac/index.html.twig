@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <section class="card">
+       <div class="col-12">
+           <div class="row">
+                {% for card in cards %}
+                    {% if loop.index >= ((page - 1) * 20 + 1) and loop.index <= (page * 20) %}
+                      <div class="col-3">
+                           <a href="{{ path('showCard', {'img': card.img |lower}) }}"><img class="img-fluid" data-toggle="tooltip" data-placement="right" data-html="true" title="{{ card.effect }}" id="{{ card.name |lower |replace({' ': "_"}) }}" src="{% if app.request.attributes.get('_route') != 'cards' %}../{% endif %}../assets/cards/{{ card.img }}.png" alt=""></a>
+                       </div>
+                       {% if loop.index is divisible by(4) and not loop.last %}
+                           </div>
+                           <div class="row">
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+           </div>
+           <ul class="pagination justify-content-center" style="text-align: center">
+                {% if page > 1 %}
+                    <li class="page-item"><a href="{{ path(app.request.attributes.get('_route'), {'page': page - 1}) }}" class="page-link">&lt;&lt;</a></li>
+                {% endif %}
+               {% for card in cards %}
+                    {% if loop.index == loop.last %}
+                        {% for i in 1..((loop.length / 20) |round(0, 'ceil')) %}
+                            <li class="page-item {% if page == i %}active disabled{% endif %}"><a class="page-link" href="{{ path(app.request.attributes.get('_route'), {'page': i}) }}">{{ i }}</a></li>
+                        {% endfor %}
+                        {% if (loop.length / 20) |round(0, 'ceil') != page %}
+                            <li class="page-item"><a href="{{ path(app.request.attributes.get('_route'), {'page': page + 1}) }}" class="page-link">&gt;&gt;</a></li>
+                        {% endif %}
+                   {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Four Souls FR{% endblock %}
+
+{% block body %}
+    {{ form_start(cardForm) }}
+    {{ form_row(cardForm.img) }}
+    {{ form_row(cardForm.name) }}
+    {{ form_row(cardForm.health) }}
+    {{ form_row(cardForm.reqToAttack) }}
+    {{ form_row(cardForm.attackPts) }}
+    {{ form_row(cardForm.effect) }}
+    {{ form_row(cardForm.reward) }}
+    {{ form_row(cardForm.types) }}
+    {{ form_end(cardForm) }}
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('build/addCard.js') }}"></script>
+{% endblock %}

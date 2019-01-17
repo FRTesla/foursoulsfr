@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="card">
+        <div class="row">
+            <div class="col-6">
+                <div class="col-12">
+                    <img class="img-fluid" src="../assets/cards/{{ card.img }}.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 style="text-align: center">{{ card.name }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h5 style="text-align: center">
+                            | 
+                            {% for card in card.types %}
+                                 {{ card.name }} | 
+                            {% endfor %}
+                        </h5>
+                    </div>
+                </div>
+                {% if card.health != null %}
+                    <div class="row">
+                        <div class="col-12">
+                           <img class="img-fluid" src="..\assets\icons\heart.png" alt="" style="float: left; padding-right: 10px">
+                            <h3>: {{ card.health }}</h3>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if card.attackPts != null %}
+                    <div class="row">
+                        <div class="col-12">
+                           <img class="img-fluid" src="..\assets\icons\sword.png" alt="" style="float: left; padding-right: 24px">
+                            <h3>: {{ card.attackPts }}</h3>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-12">
+                        <h3 style="text-align: center">{{ card.effect |replace({'[active]': "<img src=\"..\\assets\\icons\\active.png\">"}) |raw }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+{% endblock %}
